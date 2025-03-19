@@ -14,7 +14,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsc && shx chmod +x dist/*.js",
+    "build": "tsc && chmod +x dist/*.js",
     "prepare": "cnpm run build",
     "start": "node dist/index.js",
     "dev": "ts-node --esm src/index.ts",
@@ -26,9 +26,10 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.1",
+    "dotenv": "^16.3.1",
     "mysql2": "^3.13.0",
     "pg": "^8.11.3",
-    "dotenv": "^16.3.1"
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
@@ -43,4 +44,4 @@
     "ai",
     "database"
   ]
-} 
+}
