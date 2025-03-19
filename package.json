@@ -1,0 +1,46 @@
+{
+  "name": "mcp-server-db-ts",
+  "version": "1.0.0",
+  "description": "MCP服务器，用于查询数据库的TypeScript实现",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "preferGlobal": true,
+  "bin": {
+    "mcp-server-db": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "prepare": "cnpm run build",
+    "start": "node dist/index.js",
+    "dev": "ts-node --esm src/index.ts",
+    "watch": "tsc --watch",
+    "setup": "node scripts/setup-env.js",
+    "prestart": "npm run setup",
+    "predev": "npm run setup",
+    "test:db": "ts-node --esm src/test-query.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1",
+    "mysql2": "^3.13.0",
+    "pg": "^8.11.3",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/pg": "^8.10.9",
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "node",
+    "mcp",
+    "ai",
+    "database"
+  ]
+} 
